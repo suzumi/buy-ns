@@ -1,14 +1,9 @@
-// モジュール読み込み
 var client = require('cheerio-httpcli');
 var request = require('request');
 
 
-// スクレイピング開始
 setInterval(function(){
-  //時刻データを取得して変数jikanに格納する
   var date = new Date();
-
-  //時・分・秒を取得する
   var hour = date.getHours();
   var minute = date.getMinutes();
   var second = date.getSeconds();
