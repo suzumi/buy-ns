@@ -7,7 +7,7 @@ setInterval(function(){
   var hour = date.getHours();
   var minute = date.getMinutes();
   var second = date.getSeconds();
-  client.fetch('https://store.nintendo.co.jp/category/NINTENDOSWITCH/HAC_S_KAYAA.html', {}, function (err, $, res) {
+  client.fetch('[target url]', {}, function (err, $, res) {
 
     // 購入ボタン
     $('.add_area').each(function() {
@@ -16,12 +16,12 @@ setInterval(function(){
       } else {
         console.log(`[${hour}時${minute}分${second}秒] > `, '再販！！');
         var options = {
-          uri: "https://hooks.slack.com/services/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",
+          uri: "[your incomming web hook url]",
           headers: {
             "Content-type": "application/json",
           },
           json: {
-            "text": "再販開始！！\thttps://store.nintendo.co.jp/category/NINTENDOSWITCH/HAC_S_KAYAA.html"
+            "text": "再販開始！！"
           }
         };
         request.post(options, function(error, response, body){});
